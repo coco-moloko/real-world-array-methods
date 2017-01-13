@@ -1,4 +1,4 @@
-{
+var wholeThing = {
     "currently": {
         "apparentTemperature": 69.12,
         "cloudCover": 0.55,
@@ -1486,5 +1486,14 @@
     },
     "offset": -4,
     "timezone": "America/Montreal"
-}
+};
 
+
+//will it rain today boolean 
+
+function willItRainToday() {
+    return wholeThing.hourly.data.some(function(x) {
+        return x.precipType === "rain";
+    });
+}
+console.log(willItRainToday());
