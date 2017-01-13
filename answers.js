@@ -1492,8 +1492,25 @@ var wholeThing = {
 //will it rain today boolean 
 
 function willItRainToday() {
-    return wholeThing.hourly.data.some(function(x) {
+    return wholeThing.hourly.data.slice(0, 24).some(function(x) {
         return x.precipType === "rain";
     });
 }
 console.log(willItRainToday());
+
+//will it rain in the next 8 hours
+
+function findRainEightHours() {
+    return wholeThing
+        .hourly
+        .data
+        .slice(0, 8)
+        .some 
+        (function(x) {
+        return x.precipType === "rain";
+    });
+}
+
+console.log(findRainEightHours());
+
+//give me the temperature - map
